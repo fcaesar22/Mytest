@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
+    <title>Lifestyle</title>
+</head>
+<body>
+
+<header class="clearfix">
+	<div id="logo" align="center">
+		<img src="<?=base_url()?>assets/img/denslife.jpg">
+	</div>
+</header>
+<hr>
+
+<table>
+<tbody>
+  <tr>
+    <td rowspan="5"><img style="width:380px;height:280px;" src="<?php echo $poster[6]['poster_url'] ?>"></td>
+  </tr>
+  <tr>
+    <td><img style="width:180px;height:90px;" src="<?php echo $poster[6]['poster_url'] ?>"></td>
+  </tr>
+  <tr>
+    <td><img style="width:180px;height:90px;" src="<?php echo $poster[6]['poster_url'] ?>"></td>
+  </tr>
+  <tr>
+    <td><img style="width:180px;height:90px;" src="<?php echo $poster[6]['poster_url'] ?>"></td>
+  </tr>
+</tbody>
+</table>
+    
+<h1><?php echo $article_title ?></h1>
+ 
+<article>
+	<table>
+		<tbody>
+			<tr>
+				<td><?php echo $article_content_1 ?></td>
+				<td><?php echo $article_content_2 ?></td>
+			</tr>
+		</tbody>
+	</table>
+</article>
+
+<!-- <article>
+	<div class="row">
+		<?php if($article_content_2==null){ ?>
+			<div class="col-md-12"><?php echo $article_content_1 ?></div>
+		<?php }else{ ?>
+		<div class="col-md-6"><?php echo $article_content_1 ?></div>
+		<div class="col-md-6"><?php echo $article_content_2 ?></div>
+		<?php } ?>
+		
+	</div>
+</article> -->
+ 
+</div>
+ 
+</body>
+</html>

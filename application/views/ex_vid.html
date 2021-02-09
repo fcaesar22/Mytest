@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+<link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet">
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<video autoplay id="myVideo" width="640" height="264">
+  <source src="http://rr.digdaya.co.id/01/MVADS00003/index1.m3u8" type="application/x-mpegURL">>
+</video>
+
+<!-- <video id=example-video width=960 height=540 class="video-js vjs-default-skin" controls>
+  <source
+     src="http://rr.digdaya.co.id/01/MVADS00003/index1.m3u8"
+     type="application/x-mpegURL">
+</video> -->
+
+<script type="text/javascript">
+    videojs('myVideo', {autoplay: true});
+
+</script>
+</body>
+
+</html>

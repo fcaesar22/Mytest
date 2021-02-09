@@ -1,0 +1,18 @@
+SELECT SUBSTRING(product_id,POSITION("_" IN product_id)+1), poster_url, poster_visible FROM tmp_poster
+SELECT SUBSTRING(SUBSTRING(product_id,POSITION("_" IN product_id)+1),POSITION("_" IN product_id)+1), poster_url, poster_visible FROM tmp_poster
+
+
+SELECT SUBSTRING(ptr, 1, CHARACTER_LENGTH(ptr) - (POSITION("_" IN ptr)+1)), ptr, product_id, poster_url, poster_visible FROM (
+	SELECT SUBSTRING(product_id,POSITION("_" IN product_id)+1) as ptr, product_id, poster_url, poster_visible FROM tmp_poster
+) as test
+
+
+SELECT SUBSTRING(ptr, 1, CHARACTER_LENGTH(ptr) - (POSITION("_" IN ptr))), CHARACTER_LENGTH(ptr), ptr, product_id, poster_url, poster_visible FROM (
+	SELECT SUBSTRING(product_id,POSITION("_" IN product_id)+1) as ptr, product_id, poster_url, poster_visible FROM tmp_poster
+) as test
+
+SELECT SUBSTRING(SUBSTRING(product_id,POSITION("_" IN product_id)+1), 1, CHARACTER_LENGTH(SUBSTRING(product_id,POSITION("_" IN product_id)+1)) - (POSITION("_" IN SUBSTRING(product_id,POSITION("_" IN product_id)+1)))) AS sptr, product_id, poster_url, poster_visible FROM  tmp_poster
+
+
+CREATE VIEW view_article_content AS
+SELECT SUBSTRING(SUBSTRING(product_id,POSITION("_" IN product_id)+1), 1, CHARACTER_LENGTH(SUBSTRING(product_id,POSITION("_" IN product_id)+1)) - (POSITION("_" IN SUBSTRING(product_id,POSITION("_" IN product_id)+1)))) AS sptr, product_id, poster_url, poster_visible FROM  tmp_poster
